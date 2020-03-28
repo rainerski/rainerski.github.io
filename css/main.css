@@ -47,15 +47,17 @@ header {
   text-align: center;
   font-size: 2em;
   color: white;
+  text-shadow: #000 1px 1px 2px;
 }
 
 .date {
   display: block;
-  padding: 0.5em;
+  padding: 0.3em;
   justify-content: center;
   text-align: center;
   font-size: 3em;
   color: white;
+  text-shadow: #000 1px 1px 2px;
 }
 
 @media (max-width: 600px) {
