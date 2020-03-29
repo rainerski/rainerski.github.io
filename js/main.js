@@ -6,7 +6,7 @@ let seconds = document.getElementById('seconds')
 let milli = document.getElementById('milli')
 let ski = document.getElementById('ski')
 
-let randNr = Math.floor(Math.random() * 4)
+let randNr = Math.floor(Math.random() * 9)
 ski.style.backgroundImage = `url('img/${randNr}.jpg')`;
 
 setInterval(() => {
