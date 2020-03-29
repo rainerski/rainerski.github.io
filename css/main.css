@@ -10,7 +10,7 @@
 html{
   margin: 0;
   height: 100%;
-  background: url("../img/IMG-20200328-WA0003.jpg") no-repeat center center fixed; ;
+  background: url("../img/0.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -22,7 +22,6 @@ body {
   height: inherit;
   display: flex;
   flex-direction: column;
-
 }
 
 #app {
@@ -36,18 +35,24 @@ body {
 
 
 #date-counter {
+  flex-grow: 1;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 
 header {
+  flex-grow: 1;
   text-align: center;
   font-size: 2em;
   color: white;
-  text-shadow: #000 1px 1px 2px;
+  text-shadow: #000 1.5px 1.5px 2px;
+}
+
+h1{
+  margin: 10px;
 }
 
 .date {
@@ -60,7 +65,7 @@ header {
   text-shadow: #000 1px 1px 2px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   #date-counter {
     height: inherit;
     display: flex;
@@ -69,6 +74,9 @@ header {
     align-items: center;
   }
 
+  .date {
+    padding: 0px;
+  }
   .date *{
     display: inline;
   }
