@@ -1,8 +1,8 @@
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/rainersskicountdown/service-worker.js')
+    navigator.serviceWorker.register('/rainersskicountdown/service-worker.js', {scope: '/rainersskicountdown'})
         .then((reg) => {
             // registration worked
-            console.log('Registration succeeded. Scope is ');
+            console.log('Registration succeeded.');
         }).catch((error) => {
             // registration failed
             console.log('Registration failed with ' + error);

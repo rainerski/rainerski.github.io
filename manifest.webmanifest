@@ -7,6 +7,7 @@
     "sizes": "192x192"
   }],
   "start_url": "/rainersskicountdown",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#fafafa",
   "theme_color": "#fafafa"
