@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../service-worker.js')
+    navigator.serviceWorker.register('../rainersskicountdown/service-worker.js')
         .then((reg) => {
             // registration worked
             console.log('Registration succeeded. Scope is ');
@@ -47,7 +47,6 @@ let seconds = document.getElementById('seconds')
 // let milli = document.getElementById('milli')
 let ski = document.getElementById('ski')
 
-let randNr = Math.floor(Math.random() * 9)
 
 setInterval(() => {
     let timeDiff = new Date(skiDate - new Date());
@@ -59,6 +58,6 @@ setInterval(() => {
 }, 35)
 
 setInterval(() => {
-    // document.documentElement.style.backgroundImage = '';
-    // document.documentElement.style.backgroundImage = `url('img/${randNr}.jpg')`;
-}, 1000)
+    let randNr = Math.floor(Math.random() * 9)
+    document.documentElement.style.backgroundImage = `url('img/${randNr}.jpg')`;
+}, 8000)
