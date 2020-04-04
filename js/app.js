@@ -1,42 +1,39 @@
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js')
         .then((reg) => {
-            // registration worked
             console.log('Registration succeeded.');
         }).catch((error) => {
-            // registration failed
             console.log('Registration failed with ' + error);
         });
 }
 
 let deferredPrompt;
+const installButton = document.getElementById('install-button');
 
 window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent the mini-infobar from appearing on mobile
-    // e.preventDefault();
-    // Stash the event so it can be triggered later.
+    e.preventDefault();
     deferredPrompt = e;
     // Update UI notify the user they can install the PWA
-    // showInstallPromotion();
+    installButton.hidden = false;
 });
 
-// buttonInstall.addEventListener('click', (e) => {
-//     // Hide the app provided install promotion
-//     hideMyInstallPromotion();
-//     // Show the install prompt
-//     deferredPrompt.prompt();
-//     // Wait for the user to respond to the prompt
-//     deferredPrompt.userChoice.then((choiceResult) => {
-//         if (choiceResult.outcome === 'accepted') {
-//             console.log('User accepted the install prompt');
-//         } else {
-//             console.log('User dismissed the install prompt');
-//         }
-//     })
-// });
+installButton.addEventListener('click', (e) => {
+    // Show the install prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+            console.log('PWA installation accepted');
+            installButton.hidden = true;
+        } else {
+            console.log('PWA installation cancelled');
+        }
+    })
+});
 
 window.addEventListener('appinstalled', (evt) => {
-    console.log('a2hs installed');
+    console.log('PWA installation done!');
 });
 
 const skiDate = new Date(2021, 2, 28, 6)
@@ -58,9 +55,9 @@ setInterval(() => {
     // milli.innerHTML = 1000 - timeDiff.getUTCMilliseconds()
 }, 35)
 
-setInterval(() => {
-    setBackground();
-}, 8000)
+// setInterval(() => {
+//     setBackground();
+// }, 8000)
 
 function setBackground() {
     let randNr = Math.floor(Math.random() * 9);

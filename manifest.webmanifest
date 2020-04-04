@@ -1,6 +1,6 @@
 {
-  "short_name": "skiCD",
-  "name": "Rainers SkiCD",
+  "short_name": "Ski Counter",
+  "name": "Ski Counter",
   "icons": [{
     "src": "icon.png",
     "type": "image/png",
