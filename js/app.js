@@ -7,34 +7,11 @@ if ('serviceWorker' in navigator) {
         });
 }
 
-let deferredPrompt;
-const installButton = document.getElementById('install-button');
-
 window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent the mini-infobar from appearing on mobile
-    e.preventDefault();
-    deferredPrompt = e;
-    // Update UI notify the user they can install the PWA
-    installButton.hidden = false;
-});
-
-installButton.addEventListener('click', (e) => {
-    installButton.hidden = true;
-    // Show the install prompt
-    deferredPrompt.prompt();
-    // Wait for the user to respond to the prompt
-    deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-            installButton.hidden = true;
-            console.log('PWA installation accepted');
-        } else {
-            console.log('PWA installation cancelled');
-        }
-    })
+  console.log('PWA installation done!');
 });
 
 window.addEventListener('appinstalled', (evt) => {
-    installButton.hidden = true;
     console.log('PWA installation done!');
 });
 
@@ -46,8 +23,6 @@ let seconds = document.getElementById('seconds')
 // let milli = document.getElementById('milli')
 let ski = document.getElementById('ski')
 
-setBackground();
-
 setInterval(() => {
     let timeDiff = new Date(skiDate - new Date());
     days.innerHTML = Math.floor(timeDiff / (1000 * 60 * 60 * 24))
@@ -57,12 +32,13 @@ setInterval(() => {
     // milli.innerHTML = 1000 - timeDiff.getUTCMilliseconds()
 }, 35)
 
-// setInterval(() => {
-//     setBackground();
-// }, 8000)
+setBackground();
+setInterval(() => {
+    setBackground();
+}, 8000)
 
 function setBackground() {
     let randNr = Math.floor(Math.random() * 9);
-    document.documentElement.style.backgroundImage = `url('img/${randNr}.jpg')`;
+    document.body.style.backgroundImage = `url('img/${randNr}.jpg')`;
 }
 

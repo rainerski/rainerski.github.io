@@ -1,46 +1,25 @@
-/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* started as progressive web app */
-
 @media all and (display-mode: standalone) {}
 
-html {
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
   margin: 0;
-  height: 100%;
   background: url("") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  transition: background 1s;
+  transition: background 0.5s;
 }
 
-body {
+h1 {
   margin: 0;
-  height: inherit;
-  display: flex;
-  flex-direction: column;
-}
-
-#app {
-  margin: 0;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 header {
-  flex-grow: 1;
   text-align: center;
   font-size: 2em;
   color: white;
@@ -48,51 +27,32 @@ header {
 }
 
 #date-counter {
-  flex-grow: 1;
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
-  /* align-items: center; */
+  justify-content: space-evenly;
 }
 
-.install-div {
-  flex-grow: 1;
-}
+@media (max-width: 720px) {
 
-#install-button {
-  padding: 0.4em;
-  font-size: 1.5em; 
-}
+  body {
+    justify-content: space-between;
+  }
 
-h1 {
-  margin: 10px;
+  #date-counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
 }
 
 .date {
-  display: block;
-  padding: 0.3em;
-  justify-content: center;
   text-align: center;
   font-size: 3em;
   color: white;
   text-shadow: #000 1px 1px 2px;
 }
 
-@media (max-width: 720px) {
-  #date-counter {
-    height: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .date {
-    padding: 0px;
-  }
-  .date * {
-    display: inline;
-  }
-}
 
 /* ==========================================================================
    Base styles: opinionated defaults
