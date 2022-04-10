@@ -15,7 +15,7 @@ window.addEventListener('appinstalled', (evt) => {
     console.log('PWA installation done!');
 });
 
-const skiDate = new Date(2021, 2, 28, 6)
+const skiDate = new Date(2022, 3, 10, 10)
 let days = document.getElementById('days')
 let hours = document.getElementById('hours')
 let minutes = document.getElementById('minutes')
